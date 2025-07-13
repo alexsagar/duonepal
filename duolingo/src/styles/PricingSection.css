@@ -1,0 +1,352 @@
+.pricing-section {
+  background: white;
+  padding: 4rem 1rem;
+  max-width: 1280px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1e293b;
+}
+
+.pricing-layout {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.pricing-left {
+  flex: 1;
+}
+
+.plan-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.plan-description {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.price-group {
+  margin-top: 1rem;
+}
+
+.price-main {
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.currency {
+  font-size: 1.2rem;
+  color: #3b82f6;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.savings {
+  font-size: 0.85rem;
+  color: #10b981;
+  background: rgba(16,185,129,0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.pricing-right {
+  flex: 1;
+}
+
+.popular-badge {
+  display: inline-flex;
+  align-items: center;
+  background: #ffe066;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.payment-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.payment-method {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.payment-method:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.payment-method img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.method-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.highlight {
+  border: 2px solid #fde68a;
+  background: #fff9db;
+}
+
+.popular-label {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 0.75rem;
+  color: #1e293b;
+  background: #facc15;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+}
+
+.book-now-btn {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.security-note {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.features-wrapper {
+  margin-top: 3rem;
+}
+
+.features-grid1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.features-grid1 li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #10b981;
+  background: #ecfdf5;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.features-grid1 li:hover {
+  background: #d1fae5;
+}
+
+.extra-info {
+  margin-top: 3rem;
+}
+
+.info-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.info-box h5 {
+  margin: 0.75rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.info-box p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.faq-section {
+  margin-top: 4rem;
+}
+
+.faq-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.faq-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.faq-box {
+  flex: 1;
+  min-width: 250px;
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* MOBILE: Stack layout, fix padding, grid to single column */
+@media (max-width: 900px) {
+  .pricing-layout {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: stretch;
+  }
+  .pricing-left,
+  .pricing-right {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Tighter padding and full width */
+@media (max-width: 700px) {
+  .pricing-section {
+    padding: 2rem 0.5rem;
+  }
+  .features-wrapper,
+  .extra-info,
+  .faq-section {
+    margin-top: 2rem;
+  }
+  .plan-name {
+    font-size: 1.3rem;
+  }
+  .price-main {
+    font-size: 1.4rem;
+  }
+}
+
+/* Grid to single column, info/fag cards stack, fix buttons */
+@media (max-width: 600px) {
+  .features-grid1,
+  .faq-grid,
+  .info-grid {
+    display: block;
+  }
+  .features-grid1 li,
+  .faq-box,
+  .info-box {
+    margin-bottom: 1rem;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .book-now-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+    .pricing-section {
+    /* More visible space at sides on small screens */
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+    box-sizing: border-box;
+  }
+  .pricing-layout {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  .plan-description,
+  .payment-title {
+    font-size: 0.97rem;
+  }
+  .faq-section h3 {
+    font-size: 1.13rem;
+    margin-bottom: 1.3rem;
+  }
+}
+
+/* Tiny screens: Smaller fonts, less padding, less gap */
+@media (max-width: 400px) {
+   .pricing-section {
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+  .plan-name,
+  .faq-section h3 {
+    font-size: 1.01rem;
+  }
+  .features-grid1 li,
+  .info-box,
+  .faq-box {
+    font-size: 0.92rem;
+    padding: 0.7rem 0.5rem;
+  }
+  .book-now-btn {
+    font-size: 0.94rem;
+    padding: 0.6rem 0.5rem;
+    border-radius: 22px;
+  }
+  .popular-badge {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
