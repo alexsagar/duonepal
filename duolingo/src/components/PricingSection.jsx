@@ -96,7 +96,7 @@ const PricingSection = () => {
                 <span>Book Now Securely</span>
                 <ArrowRight size={20} className="btn-icon" />
               </Link>
-              <p className="fine-print"><ShieldCheck size={14} /> You will be redirected to the secure booking form.</p>
+              <p className="fine-print">You will be redirected to the secure booking form.</p>
             </div>
           </div>
         </div>
@@ -106,9 +106,6 @@ const PricingSection = () => {
       <section className="pricing-row-section">
         <div className="container-inner row-layout">
           <div className="row-header">
-            <div className="icon-wrapper">
-              <CheckCircle2 size={24} className="accent-icon" />
-            </div>
             <h2>What's Included</h2>
             <p>Everything you need for a smooth test booking experience.</p>
           </div>
@@ -129,9 +126,6 @@ const PricingSection = () => {
       <section className="pricing-row-section alternate-bg">
         <div className="container-inner">
           <div className="section-title-center">
-            <div className="icon-wrapper">
-              <ListChecks size={24} className="accent-icon" />
-            </div>
             <h2>How Booking Works</h2>
             <p>A simple 4-step process to get your account.</p>
           </div>
@@ -155,9 +149,6 @@ const PricingSection = () => {
 
           <div className="split-column">
             <div className="row-header">
-              <div className="icon-wrapper">
-                <CreditCard size={24} className="accent-icon" />
-              </div>
               <h2>Accepted Payments</h2>
               <p>We accept popular local digital wallets.</p>
             </div>
@@ -178,9 +169,6 @@ const PricingSection = () => {
 
           <div className="split-column">
             <div className="row-header">
-              <div className="icon-wrapper alert-wrapper">
-                <ShieldCheck size={24} className="alert-icon" />
-              </div>
               <h2>Before You Book</h2>
               <p>Please have these ready before starting.</p>
             </div>
@@ -201,9 +189,6 @@ const PricingSection = () => {
       <section className="pricing-row-section alternate-bg faq-section">
         <div className="container-inner row-layout">
           <div className="row-header">
-            <div className="icon-wrapper">
-              <HelpCircle size={24} className="accent-icon" />
-            </div>
             <h2>Common Questions</h2>
             <p>Everything you need to know about the booking process and pricing.</p>
           </div>

@@ -33,7 +33,7 @@
 
 /* Sections */
 section {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
   background: var(--pricing-bg-main);
   border-bottom: 1px solid #f1f5f9;
 }
@@ -44,7 +44,7 @@ section.alternate-bg {
 
 /* 1. Hero Section */
 .pricing-hero-section {
-  padding: 5rem 0 4rem;
+  padding: 3rem 0 2.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -229,6 +229,10 @@ section.alternate-bg {
   color: #64748b;
 }
 
+.fine-print svg {
+  flex-shrink: 0;
+}
+
 /* Generic Row Layout Pattern */
 .row-layout {
   display: flex;
@@ -308,7 +312,7 @@ section.alternate-bg {
 
 .premium-list li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   font-size: 1.15rem;
   line-height: 1.5;
@@ -606,7 +610,7 @@ section.alternate-bg {
 
 @media (max-width: 640px) {
   section {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
   }
 
   .pricing-hero-section {
