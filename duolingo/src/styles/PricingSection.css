@@ -158,7 +158,7 @@ section.alternate-bg {
 
 .price-display {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 0.4rem;
   margin-bottom: 0.5rem;
 }
@@ -167,7 +167,6 @@ section.alternate-bg {
   font-size: 1.5rem;
   font-weight: 600;
   color: #334155;
-  margin-top: 0.4rem;
 }
 
 .amount {
@@ -578,6 +577,23 @@ section.alternate-bg {
     text-align: center;
     gap: 1.5rem;
     padding: 2.5rem 2rem;
+  }
+
+  .banner-content::before {
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+  }
+
+  .price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-display {
+    justify-content: center;
   }
 
   .action-info {

@@ -597,10 +597,11 @@
   }
 
   .benefit-card {
-    max-width: 300px;
-    flex-direction: column;
-    text-align: center;
-    gap: 1.25rem;
+    max-width: 100%;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 1rem;
     z-index: 10;
   }
 
@@ -808,8 +809,9 @@
 
   .benefit-card {
     padding: 0.875rem;
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
     gap: 0.875rem;
   }
 

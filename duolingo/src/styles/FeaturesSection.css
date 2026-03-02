@@ -1,13 +1,14 @@
 /* Features Section Styles */
 .features-section {
-  padding: 2.5rem 0 !important;
-  /* Vertical spacing between sections */
+  padding: 4rem 0 !important;
+  /* Increased padding to prevent overlap */
   margin: 0 !important;
   /* Force remove all margins */
   background: #ffffff !important;
   /* Force white background */
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  /* Changed from hidden to visible to prevent box-shadow cutoff */
   border: none !important;
   /* Force remove shadows */
 }
@@ -67,7 +68,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Feature Card Styles */
@@ -240,7 +241,7 @@
 @media (max-width: 1400px) {
   .features-container {
     max-width: 1200px;
-    padding: 5rem 1.5rem;
+    padding: 0 1.5rem;
   }
 
   .features-grid {
@@ -267,7 +268,7 @@
 
 @media (max-width: 1200px) {
   .features-container {
-    padding: 5rem 1.5rem;
+    padding: 0 1.5rem;
   }
 
   .features-section-title {
@@ -331,7 +332,7 @@
 
 @media (max-width: 768px) {
   .features-container {
-    padding: 4rem 1rem;
+    padding: 0 1rem;
   }
 
   .features-header {
@@ -388,7 +389,7 @@
 
 @media (max-width: 640px) {
   .features-container {
-    padding: 3rem 0.75rem;
+    padding: 0 0.75rem;
   }
 
   .features-header {
@@ -440,7 +441,7 @@
 
 @media (max-width: 480px) {
   .features-container {
-    padding: 2.5rem 0.5rem;
+    padding: 0 0.5rem;
   }
 
   .features-section-title {

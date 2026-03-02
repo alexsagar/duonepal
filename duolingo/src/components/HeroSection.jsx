@@ -30,10 +30,10 @@ const HeroSection = () => {
             <img src="/esewa.png" alt="eSewa" className="hero-logo-img" decoding="async" fetchPriority="high" />
           </div>
           <div className="hero-payment-logo">
-            <img src="/khalti.png" alt="Khalti" className="hero-logo-img" decoding="async" fetchPriority="high" />
+            <img src="/fonepay.png" alt="Fonepay" className="hero-logo-img" decoding="async" fetchPriority="high" />
           </div>
           <div className="hero-payment-logo">
-            <img src="/fonepay.png" alt="Fonepay" className="hero-logo-img" decoding="async" fetchPriority="high" />
+            <img src="/khalti.png" alt="Khalti" className="hero-logo-img" decoding="async" fetchPriority="high" />
           </div>
         </div>
 
