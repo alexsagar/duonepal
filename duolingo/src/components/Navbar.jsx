@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { HiArrowRight, HiX } from 'react-icons/hi';
 import '../styles/Navbar.css';
 
@@ -8,7 +8,6 @@ const NAVBAR_HEIGHT = 70;
 
 const Navbar = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -54,6 +53,8 @@ const Navbar = () => {
       src="/logo.png" 
       alt="Duo Nepal Logo" 
       className="navbar-logo-img"
+      decoding="async"
+      fetchPriority="high"
       style={{ height: "200px" }} // adjust as needed
     />
   </Link>

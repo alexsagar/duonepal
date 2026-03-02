@@ -1,0 +1,332 @@
+/* Premium B2B Partner / Bulk Booking Layout */
+:root {
+    --partner-bg: #f8fafc;
+    --partner-surface: #ffffff;
+    --partner-primary: #6366f1;
+    /* Indigo */
+    --partner-accent: #0f172a;
+    /* Dark Slate for B2B feel */
+    --partner-text: #0f172a;
+    --partner-muted: #64748b;
+    --partner-border: #e2e8f0;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.partner-page-wrapper {
+    padding: 8rem 0 5rem;
+    background: var(--partner-bg);
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--partner-text);
+}
+
+.partner-hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    padding: 0 1.5rem;
+    animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.b2b-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e2e8f0;
+    color: #334155;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.partner-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 800;
+    color: var(--partner-accent);
+    margin: 0 0 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.partner-hero p {
+    font-size: 1.2rem;
+    color: var(--partner-muted);
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Benefits Grid */
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+    opacity: 0;
+}
+
+.partner-benefit-card {
+    background: var(--partner-surface);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid var(--partner-border);
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.partner-benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1);
+    border-color: #cbd5e1;
+}
+
+.partner-benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: #f1f5f9;
+    color: var(--partner-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.partner-benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    color: var(--partner-accent);
+}
+
+.partner-benefit-card p {
+    font-size: 0.95rem;
+    color: var(--partner-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Layout for forms */
+.partner-form-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+    opacity: 0;
+}
+
+.b2b-form-card {
+    background: var(--partner-surface);
+    border-radius: 24px;
+    padding: 3.5rem;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.b2b-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--partner-accent);
+}
+
+.b2b-form-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    color: var(--partner-accent);
+}
+
+.b2b-form-card p.form-subtitle {
+    color: var(--partner-muted);
+    font-size: 1.05rem;
+    margin: 0 0 2.5rem;
+}
+
+.b2b-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.partner-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.partner-input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0px;
+}
+
+.partner-input-group input,
+.partner-input-group select,
+.partner-input-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #0f172a;
+    outline: none;
+    font-family: inherit;
+    transition: var(--transition-smooth);
+    margin: 0;
+}
+
+.partner-input-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.partner-input-group input:focus,
+.partner-input-group select:focus,
+.partner-input-group textarea:focus {
+    background: #ffffff;
+    border-color: var(--partner-accent);
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.1);
+}
+
+.b2b-submit-btn {
+    background: var(--partner-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -10px rgba(15, 23, 42, 0.5);
+    transition: var(--transition-smooth);
+    margin-top: 1rem;
+}
+
+.b2b-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: #1e293b;
+    box-shadow: 0 15px 25px -10px rgba(15, 23, 42, 0.6);
+}
+
+.b2b-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Bulk Table Section */
+.bulk-table-container {
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    padding: 0 1.5rem;
+    animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+    opacity: 0;
+}
+
+.bulk-pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--partner-surface);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+    border: 1px solid var(--partner-border);
+}
+
+.bulk-pricing-table th,
+.bulk-pricing-table td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--partner-border);
+}
+
+.bulk-pricing-table th {
+    background: #f1f5f9;
+    font-weight: 700;
+    color: var(--partner-accent);
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.bulk-pricing-table tr:last-child td {
+    border-bottom: none;
+}
+
+.bulk-pricing-table td {
+    color: #334155;
+    font-size: 1.05rem;
+}
+
+.bulk-pricing-table td:nth-child(2) {
+    font-weight: 700;
+    color: var(--partner-primary);
+}
+
+.bulk-pricing-table td:last-child {
+    color: #166534;
+    font-weight: 600;
+    background: #f0fdf4;
+}
+
+@media (max-width: 900px) {
+    .benefits-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .partner-page-wrapper {
+        padding: 6rem 0 3rem;
+    }
+
+    .partner-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .benefits-container {
+        grid-template-columns: 1fr;
+    }
+
+    .b2b-form-card {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,6 +1,6 @@
-/* Why Book Section Styles */
 .why-book-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
+  /* Vertical spacing between sections */
   background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.04) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.02) 0%, transparent 70%);
@@ -26,12 +26,18 @@
   padding: 0 2rem;
   position: relative;
   z-index: 1;
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box;
 }
 
 /* Header Styles */
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 0;
+  /* Changed to 0 */
+  padding-bottom: 2.5rem;
+  /* Added padding */
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -60,6 +66,9 @@
   gap: 4rem;
   align-items: center;
   animation: fadeInUp 0.8s ease-out 0.3s both;
+  margin-bottom: 0;
+  padding-bottom: 4rem;
+  /* Buffer to prevent elements touching bottom edge directly */
 }
 
 /* Benefits Columns */
@@ -351,6 +360,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -362,6 +372,7 @@
     opacity: 0;
     transform: translateX(-60px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -373,6 +384,7 @@
     opacity: 0;
     transform: translateX(60px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -384,6 +396,7 @@
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -396,10 +409,12 @@
     transform: translate(-50%, -50%) scale(1.1);
     opacity: 5;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 6;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(0.8);
     opacity: 7;
@@ -411,10 +426,12 @@
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.4;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.15);
     opacity: 0.7;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0.4;
@@ -426,10 +443,12 @@
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.5;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0.8;
   }
+
   100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0.5;
@@ -437,10 +456,13 @@
 }
 
 @keyframes gentleFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(var(--rotation, 0deg));
     opacity: 0.4;
   }
+
   50% {
     transform: translateY(-10px) rotate(var(--rotation, 0deg));
     opacity: 0.7;
@@ -453,26 +475,26 @@
     grid-template-columns: 1fr 350px 1fr;
     gap: 3rem;
   }
-  
+
   .center-video {
     height: 450px;
   }
-  
+
   .video-container::before {
     width: 650px;
     height: 650px;
   }
-  
+
   .video-container::after {
     width: 500px;
     height: 500px;
   }
-  
+
   .video-wrapper::before {
     width: 350px;
     height: 350px;
   }
-  
+
   .benefit-card {
     max-width: 280px;
     padding: 1.75rem;
@@ -483,61 +505,61 @@
   .why-book-section {
     padding: 6rem 0;
   }
-  
+
   .why-book-container {
     padding: 0 1.5rem;
   }
-  
+
   .section-title {
     font-size: 2.5rem;
   }
-  
+
   .section-subtitle {
     font-size: 1.1rem;
   }
-  
+
   .content-grid {
     grid-template-columns: 1fr 320px 1fr;
     gap: 2.5rem;
   }
-  
+
   .center-video {
     height: 400px;
   }
-  
+
   .video-container::before {
     width: 600px;
     height: 600px;
   }
-  
+
   .video-container::after {
     width: 450px;
     height: 450px;
   }
-  
+
   .video-wrapper::before {
     width: 300px;
     height: 300px;
   }
-  
+
   .benefits-column {
     gap: 2.5rem;
   }
-  
+
   .benefit-card {
     max-width: 260px;
     padding: 1.5rem;
   }
-  
+
   .benefit-icon {
     width: 48px;
     height: 48px;
   }
-  
+
   .benefit-title {
     font-size: 1.1rem;
   }
-  
+
   .benefit-description {
     font-size: 0.9rem;
   }
@@ -547,33 +569,33 @@
   .why-book-section {
     padding: 5rem 0;
   }
-  
+
   .section-header {
     margin-bottom: 4rem;
   }
-  
+
   .section-title {
     font-size: 2.25rem;
   }
-  
+
   .content-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
   }
-  
+
   .benefits-column {
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
   }
-  
+
   .left-benefits,
   .right-benefits {
     align-items: center;
   }
-  
+
   .benefit-card {
     max-width: 300px;
     flex-direction: column;
@@ -581,31 +603,31 @@
     gap: 1.25rem;
     z-index: 10;
   }
-  
+
   .center-video {
     height: 350px;
   }
-  
+
   .video-container::before {
     width: 550px;
     height: 550px;
   }
-  
+
   .video-container::after {
     width: 400px;
     height: 400px;
   }
-  
+
   .video-wrapper::before {
     width: 250px;
     height: 250px;
   }
-  
+
   .trust-badge {
     font-size: 0.85rem;
     padding: 0.875rem 1.25rem;
   }
-  
+
   /* Hide arrows on tablet and mobile for cleaner look */
   .animated-arrows {
     display: none;
@@ -616,32 +638,32 @@
   .why-book-section {
     padding: 4rem 0;
   }
-  
+
   .why-book-container {
     padding: 0 1rem;
   }
-  
+
   .section-header {
     margin-bottom: 3rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .section-subtitle {
     font-size: 1rem;
   }
-  
+
   .content-grid {
     gap: 2.5rem;
   }
-  
+
   .benefits-column {
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .benefit-card {
     max-width: 100%;
     padding: 1.25rem;
@@ -649,47 +671,47 @@
     text-align: left;
     gap: 1rem;
   }
-  
+
   .benefit-icon {
     width: 44px;
     height: 44px;
   }
-  
+
   .benefit-title {
     font-size: 1rem;
   }
-  
+
   .benefit-description {
     font-size: 0.85rem;
   }
-  
+
   .center-video {
     height: 300px;
   }
-  
+
   .video-wrapper {
     border-radius: 20px;
   }
-  
+
   .center-video {
     border-radius: 16px;
   }
-  
+
   .video-container::before {
     width: 500px;
     height: 500px;
   }
-  
+
   .video-container::after {
     width: 350px;
     height: 350px;
   }
-  
+
   .video-wrapper::before {
     width: 200px;
     height: 200px;
   }
-  
+
   .trust-badge {
     font-size: 0.8rem;
     padding: 0.75rem 1rem;
@@ -701,65 +723,65 @@
   .why-book-section {
     padding: 3rem 0;
   }
-  
+
   .why-book-container {
     padding: 0 0.75rem;
   }
-  
+
   .section-header {
     margin-bottom: 2.5rem;
   }
-  
+
   .section-title {
     font-size: 1.75rem;
   }
-  
+
   .section-subtitle {
     font-size: 0.95rem;
   }
-  
+
   .content-grid {
     gap: 2rem;
   }
-  
+
   .benefit-card {
     padding: 1rem;
     border-radius: 16px;
   }
-  
+
   .benefit-icon {
     width: 40px;
     height: 40px;
     border-radius: 12px;
   }
-  
+
   .benefit-title {
     font-size: 0.95rem;
   }
-  
+
   .benefit-description {
     font-size: 0.8rem;
   }
-  
+
   .center-video {
     height: 250px;
   }
-  
+
   .video-container::before {
     width: 450px;
     height: 450px;
   }
-  
+
   .video-container::after {
     width: 300px;
     height: 300px;
   }
-  
+
   .video-wrapper::before {
     width: 150px;
     height: 150px;
   }
-  
+
   .trust-badge {
     font-size: 0.75rem;
     padding: 0.6rem 0.875rem;
@@ -771,45 +793,45 @@
   .why-book-section {
     padding: 2.5rem 0;
   }
-  
+
   .why-book-container {
     padding: 0 0.5rem;
   }
-  
+
   .section-title {
     font-size: 1.5rem;
   }
-  
+
   .section-subtitle {
     font-size: 0.9rem;
   }
-  
+
   .benefit-card {
     padding: 0.875rem;
     flex-direction: column;
     text-align: center;
     gap: 0.875rem;
   }
-  
+
   .center-video {
     height: 220px;
   }
-  
+
   .video-container::before {
     width: 400px;
     height: 400px;
   }
-  
+
   .video-container::after {
     width: 250px;
     height: 250px;
   }
-  
+
   .video-wrapper::before {
     width: 120px;
     height: 120px;
   }
-  
+
   .trust-badge {
     font-size: 0.7rem;
     padding: 0.5rem 0.75rem;
@@ -818,27 +840,28 @@
 
 /* Accessibility and Performance */
 @media (prefers-reduced-motion: reduce) {
+
   .section-header,
   .content-grid,
   .benefit-card,
   .video-container {
     animation: none;
   }
-  
+
   .benefit-card,
   .benefit-icon,
   .arrow-element {
     transition: none;
   }
-  
+
   .benefit-card:hover {
     transform: none;
   }
-  
+
   .benefit-card:hover .benefit-icon {
     transform: none;
   }
-  
+
   .arrow-element,
   .video-container::before,
   .video-container::after,
@@ -852,34 +875,34 @@
   .why-book-section {
     background: white;
   }
-  
+
   .benefit-card {
     background: white;
     border: 2px solid #8B5CF6;
     box-shadow: none;
   }
-  
+
   .benefit-icon {
     background: #8B5CF6;
   }
-  
+
   .section-title {
     color: #000;
   }
-  
+
   .section-subtitle {
     color: #333;
   }
-  
+
   .trust-badge {
     background: white;
     border: 2px solid #8B5CF6;
   }
-  
+
   .arrow-element {
     color: #8B5CF6;
   }
-  
+
   .video-container::before,
   .video-container::after,
   .video-wrapper::before {
@@ -901,11 +924,13 @@
     max-width: 100vw !important;
     box-sizing: border-box !important;
   }
+
   .content-grid {
     width: 100% !important;
     box-sizing: border-box !important;
     gap: 1.5rem !important;
   }
+
   .benefit-card {
     width: 100% !important;
     max-width: 100% !important;

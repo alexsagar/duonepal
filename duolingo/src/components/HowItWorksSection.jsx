@@ -2,7 +2,7 @@ import React from 'react';
 import { FileText, Upload, Mail } from 'lucide-react';
 import '../styles/HowItWorksSection.css';
 
-const HowItWorksSection = () => {
+const HowItWorksSection = ({ id }) => {
   const steps = [
     {
       number: '01',
@@ -35,7 +35,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="how-it-works-section">
+    <section id={id} className="how-it-works-section">
       <div className="how-it-works-container">
         {/* Left Side - Steps */}
         <div className="steps-container">
@@ -47,13 +47,13 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => {
               const IconComponent = step.icon;
               return (
-                <div 
-                  key={step.number} 
+                <div
+                  key={step.number}
                   className={`step-item ${step.position}`}
                   style={{ '--animation-delay': `${index * 0.2}s` }}
                 >
                   {/* Step Number */}
-                  <div className="step-number">
+                  <div className="how-it-works-step-number">
                     {step.number}
                   </div>
 
@@ -76,27 +76,31 @@ const HowItWorksSection = () => {
         {/* Right Side - Image with Toast */}
         <div className="image-container">
           <div className="main-image-wrapper">
-            <img 
+            <img
               src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=2"
               alt="Professional working environment"
               className="main-image"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 e.target.src = 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&dpr=2';
               }}
             />
-            
+
             {/* Toast Notification */}
             <div className="toast-notification">
               <div className="profile-pictures">
                 {profilePictures.map((pic, index) => (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="profile-pic"
                     style={{ '--index': index }}
                   >
-                    <img 
-                      src={pic} 
+                    <img
+                      src={pic}
                       alt={`User ${index + 1}`}
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.target.src = 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&dpr=2';
                       }}

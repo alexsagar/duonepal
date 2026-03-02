@@ -148,6 +148,8 @@ const TopScorersSection = () => {
                   src={scorer.image} 
                   alt={scorer.name}
                   className="scorer-image"
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     e.target.src = `https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`;
                   }}

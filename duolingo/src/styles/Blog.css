@@ -1,0 +1,93 @@
+.blog-page {
+  background: #f8fafc;
+}
+
+.blog-hero {
+  padding: 7rem 1rem 3rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.blog-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.blog-eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0f766e;
+}
+
+.blog-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.blog-hero p {
+  margin: 1rem 0 0;
+  max-width: 760px;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.blog-list-section {
+  padding: 1.5rem 1rem 4rem;
+}
+
+.blog-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  padding: 1.4rem;
+}
+
+.blog-card + .blog-card {
+  margin-top: 1rem;
+}
+
+.blog-date {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.blog-card h2 {
+  margin: 0.4rem 0 0;
+  font-size: 1.4rem;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.blog-description {
+  margin: 0.7rem 0 0;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.blog-content {
+  margin-top: 0.8rem;
+}
+
+.blog-content p {
+  margin: 0.7rem 0 0;
+  color: #475569;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .blog-hero {
+    padding-top: 6rem;
+  }
+
+  .blog-card h2 {
+    font-size: 1.25rem;
+  }
+}

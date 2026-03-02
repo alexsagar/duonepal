@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import '../styles/SubscriptionSection.css';
+import { postJson } from '../utils/api';
 
 const SubscriptionSection = () => {
   const [email, setEmail] = useState('');
@@ -8,14 +10,20 @@ const SubscriptionSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email) return;
-    
+
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await postJson('/api/inquiries', {
+        type: 'subscription',
+        payload: { email },
+      });
+      toast.success('Subscribed successfully.');
       setIsSubmitting(false);
       setEmail('');
-      // You can add success notification here
-    }, 1000);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast.error(error?.message || 'Subscription failed. Please try again.');
+    }
   };
 
   return (

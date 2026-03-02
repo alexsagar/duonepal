@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoAdd, IoRemove } from 'react-icons/io5';
 import '../styles/FAQSection.css';
 
-const FAQSection = () => {
+const FAQSection = ({ id }) => {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   const faqs = [
@@ -42,7 +42,7 @@ const FAQSection = () => {
   const rightColumnFAQs = faqs.slice(3, 5);
 
   return (
-    <section className="faqs-section">
+    <section id={id} className="faqs-section">
       <div className="faqs-container">
         {/* Header */}
         <div className="faqs-section-headers">
@@ -57,12 +57,12 @@ const FAQSection = () => {
           {/* Left Column - 3 Questions */}
           <div className="faqs-column left-column">
             {leftColumnFAQs.map((faq, index) => (
-              <div 
-                key={faq.id} 
+              <div
+                key={faq.id}
                 className={`faqs-item ${openFAQ === faq.id ? 'active' : ''}`}
                 style={{ '--animation-delay': `${index * 0.1}s` }}
               >
-                <div 
+                <div
                   className="faqs-question"
                   onClick={() => toggleFAQ(faq.id)}
                   role="button"
@@ -90,8 +90,8 @@ const FAQSection = () => {
                     )}
                   </div>
                 </div>
-                
-                <div 
+
+                <div
                   id={`faq-answer-${faq.id}`}
                   className={`faqs-answer ${openFAQ === faq.id ? 'expanded' : ''}`}
                   aria-hidden={openFAQ !== faq.id}
@@ -107,12 +107,12 @@ const FAQSection = () => {
           {/* Right Column - 2 Questions */}
           <div className="faqs-column right-column">
             {rightColumnFAQs.map((faq, index) => (
-              <div 
-                key={faq.id} 
+              <div
+                key={faq.id}
                 className={`faqs-item ${openFAQ === faq.id ? 'active' : ''}`}
                 style={{ '--animation-delay': `${(index + 3) * 0.1}s` }}
               >
-                <div 
+                <div
                   className="faqs-question"
                   onClick={() => toggleFAQ(faq.id)}
                   role="button"
@@ -140,8 +140,8 @@ const FAQSection = () => {
                     )}
                   </div>
                 </div>
-                
-                <div 
+
+                <div
                   id={`faq-answer-${faq.id}`}
                   className={`faqs-answer ${openFAQ === faq.id ? 'expanded' : ''}`}
                   aria-hidden={openFAQ !== faq.id}

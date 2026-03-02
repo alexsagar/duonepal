@@ -1,137 +1,240 @@
-import React from 'react';
-import { Check, Star, CreditCard, Smartphone, Wallet } from 'lucide-react';
-import '../styles/PricingSection.css';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  CheckCircle2,
+  ShieldCheck,
+  CreditCard,
+  ChevronDown,
+  Check,
+  ArrowRight,
+  Sparkles,
+  Zap,
+  HelpCircle,
+  FileCheck2,
+  ListChecks
+} from 'lucide-react';
+import '../styles/PricingSection.css';
+
+const includedItems = [
+  'Official Duolingo English Test booking',
+  'Fast confirmation and account delivery',
+  'Local payment support (eSewa, Khalti, Fonepay)',
+  'Test validity: 21 days from activation',
+  'Priority support before and after booking',
+];
+
+const processSteps = [
+  { icon: <FileCheck2 size={24} />, title: 'Complete Booking Form', desc: 'Securely enter your details.' },
+  { icon: <CreditCard size={24} />, title: 'Make Payment', desc: 'Use local payment methods.' },
+  { icon: <ShieldCheck size={24} />, title: 'Upload Receipt', desc: 'Submit proof for verification.' },
+  { icon: <Zap size={24} />, title: 'Get Account', desc: 'Receive DET login details fast.' },
+];
+
+const requirements = [
+  'Valid email address for account communication',
+  'Active phone/WhatsApp number',
+  'Payment receipt image or PDF',
+  'Correct spelling of your legal name (as per ID)',
+];
+
+const faqs = [
+  {
+    question: 'Is the price fixed?',
+    answer: 'Yes. The current booking price is strictly NPR 8,500 with no hidden fees or service charges.',
+  },
+  {
+    question: 'How long does confirmation take?',
+    answer: 'Most bookings are confirmed quickly after receipt verification, typically within the same day of submission.',
+  },
+  {
+    question: 'Can I pay using local wallets?',
+    answer: 'Absolutely. We fully support eSewa, Khalti, and Fonepay transfers for your convenience.',
+  },
+  {
+    question: 'Where do I complete the booking?',
+    answer: 'Click the "Book Now" button on this page to be redirected to our secure booking form.',
+  },
+];
 
 const PricingSection = () => {
-  const features = [
-    'Instant Test Account Delivery',
-    'Valid for 21 Days from Activation',
-    '24/7 Customer Support',
-    'Free Preparation Guide (PDF)',
-    'Test Day Checklist',
-    'Score Explanation Guide',
-    'Email Confirmation',
-    'No Hidden Charges'
-  ];
+  const [openFaq, setOpenFaq] = useState(null);
 
-  const paymentMethods = [
-    {
-      name: 'eSewa',
-      logo: '/esewa.png',
-      description: 'Pay instantly with eSewa',
-      popular: true
-    },
-    {
-      name: 'Khalti',
-      logo: '/khalti.png',
-      description: 'Quick payment via Khalti'
-    },
-    {
-      name: 'Fonepay',
-      logo: '/fonepay.png',
-      description: 'Secure Fonepay transactions'
-    }
-  ];
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
-    <section className="pricing-section">
-      <div className="pricing-layout">
-        {/* Left Side */}
-        <div className="pricing-left">
-          <h3 className="plan-name">Duolingo English Test</h3>
-          <p className="plan-description">Complete test booking with instant delivery</p>
-          <div className="price-group">
-            <div className="price-main">
-              <span className="currency">NPR</span>
-              <span className="amount">7,500</span>
+    <div className="pricing-page-wrapper">
+      {/* 1. Hero Section */}
+      <section className="pricing-hero-section">
+        <div className="container-inner">
+          <div className="eyebrow-badge">
+            <Sparkles size={16} />
+            <span>Simple & Transparent Pricing</span>
+          </div>
+          <h1>Duolingo English Test Booking</h1>
+          {/* <p className="hero-subtitles">
+            One clear price. No hidden fees. Book your official test today using local payment options and get verified access within hours.
+          </p> */}
+        </div>
+      </section>
+
+      {/* 2. Main Pricing Banner CTA */}
+      <section className="pricing-banner-section alternate-bg">
+        <div className="container-inner">
+          <div className="banner-content">
+            <div className="price-info">
+              <span className="plan-label">Current Booking Price</span>
+              <div className="price-display">
+                <span className="currency">NPR</span>
+                <span className="amount">8,500</span>
+              </div>
+              <p className="price-note">Official DET booking support with local payment handling.</p>
             </div>
-            <div className="price-note">
-              <span className="original-price">Official Price: $69</span>
-              <span className="savings">You save on conversion fees!</span>
+            <div className="action-info">
+              <Link to="/book-now" className="premium-btn">
+                <span>Book Now Securely</span>
+                <ArrowRight size={20} className="btn-icon" />
+              </Link>
+              <p className="fine-print"><ShieldCheck size={14} /> You will be redirected to the secure booking form.</p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Right Side */}
-        <div className="pricing-right">
-          <div className="popular-badge">
-            <Star size={16} /> Most Popular
+      {/* 3. What's Included */}
+      <section className="pricing-row-section">
+        <div className="container-inner row-layout">
+          <div className="row-header">
+            <div className="icon-wrapper">
+              <CheckCircle2 size={24} className="accent-icon" />
+            </div>
+            <h2>What's Included</h2>
+            <p>Everything you need for a smooth test booking experience.</p>
           </div>
-          <h4 className="payment-title">Accepted Payment Methods:</h4>
-          <div className="payment-options">
-            {paymentMethods.map((method, index) => (
-              <div className={`payment-method ${method.popular ? 'highlight' : ''}`} key={index}>
-                <img src={method.logo} alt={method.name} />
-                <div className="method-text">
-                  <strong>{method.name}</strong>
-                  <p>{method.description}</p>
-                </div>
-                {method.popular && <span className="popular-label">Popular</span>}
+          <div className="row-content">
+            <ul className="premium-list">
+              {includedItems.map((item, idx) => (
+                <li key={idx}>
+                  <Check size={20} className="check-icon" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. How Booking Works */}
+      <section className="pricing-row-section alternate-bg">
+        <div className="container-inner">
+          <div className="section-title-center">
+            <div className="icon-wrapper">
+              <ListChecks size={24} className="accent-icon" />
+            </div>
+            <h2>How Booking Works</h2>
+            <p>A simple 4-step process to get your account.</p>
+          </div>
+          <div className="process-timeline-horizontal">
+            {processSteps.map((step, idx) => (
+              <div className="timeline-step" key={idx}>
+                <div className="step-icon-box">{step.icon}</div>
+                <div className="step-number">Step {idx + 1}</div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+                {idx !== processSteps.length - 1 && <div className="step-connector" />}
               </div>
             ))}
           </div>
-          <Link to="/book-now">
-  <button className="book-now-btn">
-    <CreditCard size={18} /> Book Now - NPR 7,500
-  </button>
-</Link>
-<p className="security-note">
-  🔒 Secure payment • Instant delivery • 100% legitimate
-</p>
         </div>
-      </div>
+      </section>
 
-      {/* Features Below */}
-      <div className="features-wrapper">
-        <h4>What's Included:</h4>
-        <ul className="features-grid1">
-          {features.map((feature, index) => (
-            <li key={index}><Check size={18} /> {feature}</li>
-          ))}
-        </ul>
-      </div>
+      {/* 5. Payments & Requirements (Side by side on desktop, stacked on mobile) */}
+      <section className="pricing-row-section split-section">
+        <div className="container-inner split-grid">
 
-      {/* Additional Info Section */}
-      <div className="extra-info">
-        <div className="info-grid">
-          <div className="info-box">
-            <Smartphone size={28} />
-            <h5>Instant Delivery</h5>
-            <p>Get your test account details via email within minutes of payment confirmation</p>
+          <div className="split-column">
+            <div className="row-header">
+              <div className="icon-wrapper">
+                <CreditCard size={24} className="accent-icon" />
+              </div>
+              <h2>Accepted Payments</h2>
+              <p>We accept popular local digital wallets.</p>
+            </div>
+            <div className="payment-logos-premium">
+              <div className="logo-box">
+                <img src="/esewa.png" alt="eSewa" loading="lazy" decoding="async" onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.textContent = 'eSewa' }} />
+              </div>
+              <div className="logo-box">
+                <img src="/khalti.png" alt="Khalti" loading="lazy" decoding="async" onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.textContent = 'Khalti' }} />
+              </div>
+              <div className="logo-box">
+                <img src="/fonepay.png" alt="Fonepay" loading="lazy" decoding="async" onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.textContent = 'Fonepay' }} />
+              </div>
+            </div>
           </div>
-          <div className="info-box">
-            <CreditCard size={28} />
-            <h5>Local Payments</h5>
-            <p>No need for dollar cards or international payment methods</p>
+
+          <div className="split-divider"></div>
+
+          <div className="split-column">
+            <div className="row-header">
+              <div className="icon-wrapper alert-wrapper">
+                <ShieldCheck size={24} className="alert-icon" />
+              </div>
+              <h2>Before You Book</h2>
+              <p>Please have these ready before starting.</p>
+            </div>
+            <ul className="requirements-list">
+              {requirements.map((item, idx) => (
+                <li key={idx} className="req-item">
+                  <div className="req-dot" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="info-box">
-            <Check size={28} />
-            <h5>100% Legitimate</h5>
-            <p>Official Duolingo test vouchers with worldwide recognition</p>
+
+        </div>
+      </section>
+
+      {/* 6. FAQs */}
+      <section className="pricing-row-section alternate-bg faq-section">
+        <div className="container-inner row-layout">
+          <div className="row-header">
+            <div className="icon-wrapper">
+              <HelpCircle size={24} className="accent-icon" />
+            </div>
+            <h2>Common Questions</h2>
+            <p>Everything you need to know about the booking process and pricing.</p>
+          </div>
+          <div className="row-content">
+            <div className="faq-accordion">
+              {faqs.map((item, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div
+                    className={`faq-card ${isOpen ? 'open' : ''}`}
+                    key={idx}
+                    onClick={() => toggleFaq(idx)}
+                  >
+                    <div className="faq-question">
+                      <h3>{item.question}</h3>
+                      <ChevronDown
+                        size={20}
+                        className={`faq-chevron ${isOpen ? 'rotate' : ''}`}
+                      />
+                    </div>
+                    <div className="faq-answer-wrapper" style={{ maxHeight: isOpen ? '200px' : '0' }}>
+                      <p className="faq-answer">{item.answer}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* FAQ Section */}
-      <div className="faq-section">
-        <h3>Common Questions</h3>
-        <div className="faq-grid">
-          <div className="faq-box">
-            <h4>How long is the test valid?</h4>
-            <p>Your test account is valid for 21 days from activation.</p>
-          </div>
-          <div className="faq-box">
-            <h4>Is this the official price?</h4>
-            <p>Yes, NPR 7,500 is equivalent to the official $49 USD price.</p>
-          </div>
-          <div className="faq-box">
-            <h4>What if I need help?</h4>
-            <p>Our 24/7 support team is available via WhatsApp, email, and phone.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

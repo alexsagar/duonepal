@@ -1,18 +1,20 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import '../styles/Footer.css';
 
 const Footer = () => {
   const quickLinks = [
     { name: 'Book a Test', href: '/book-now' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Track Booking', href: '/track-booking' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Refer & Earn', href: '/refer' }
   ];
 
   const supportLinks = [
-    { name: 'How It Works', href: '/how-it-works' },
-    { name: 'FAQs', href: '/faqs' },
+    { name: 'How It Works', href: '/#how-it-works' },
+    { name: 'FAQs', href: '/#faqs' },
     { name: 'Terms & Conditions', href: '/terms' },
     { name: 'Privacy Policy', href: '/privacy' }
   ];
@@ -57,9 +59,9 @@ const Footer = () => {
             <ul className="footer-links">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="footer-link">
+                  <HashLink to={link.href} className="footer-link">
                     {link.name}
-                  </a>
+                  </HashLink>
                 </li>
               ))}
             </ul>
@@ -71,9 +73,9 @@ const Footer = () => {
             <ul className="footer-links">
               {supportLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="footer-link">
+                  <HashLink to={link.href} className="footer-link">
                     {link.name}
-                  </a>
+                  </HashLink>
                 </li>
               ))}
             </ul>
@@ -85,9 +87,9 @@ const Footer = () => {
             <ul className="footer-links">
               {consultancyLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="footer-link">
+                  <HashLink to={link.href} className="footer-link">
                     {link.name}
-                  </a>
+                  </HashLink>
                 </li>
               ))}
             </ul>
@@ -98,7 +100,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © 2025 DUONepal. All rights reserved.
+              (c) 2025 DUONepal. All rights reserved.
             </p>
             <div className="social-links">
               <a href="#" className="social-link" aria-label="Facebook">

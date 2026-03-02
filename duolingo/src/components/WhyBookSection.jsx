@@ -41,7 +41,7 @@ const WhyBookSection = () => {
         <div className="section-header">
           <h2 className="section-title3">Why Book with DuoTest Nepal?</h2>
           <p className="section-subtitle">
-            Unlock your true potential and discover a world of opportunities 
+            Unlock your true potential and discover a world of opportunities
             that align with your skills, interests, and aspirations
           </p>
         </div>
@@ -68,22 +68,18 @@ const WhyBookSection = () => {
               })}
           </div>
 
-          {/* Center Video */}
+          {/* Center Image */}
           <div className="video-container">
             <div className="video-wrapper">
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline 
+              <img
+                src="/study.png"
+                alt="Happy student who booked Duolingo English Test through DuoNepal"
                 className="center-video"
-                poster="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&dpr=2"
-              >
-                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              
-              {/* Video Overlay */}
+                loading="lazy"
+                decoding="async"
+              />
+
+              {/* Image Overlay */}
               <div className="video-overlay">
                 <div className="trust-badge">
                   <Users size={16} />
@@ -116,12 +112,12 @@ const WhyBookSection = () => {
 
         {/* Animated Arrows */}
         <div className="animated-arrows">
-          <ArrowRight className="arrow-element arrow-1" style={{'--rotation': '-30deg'}} />
-          <ArrowRight className="arrow-element arrow-2" style={{'--rotation': '30deg'}} />
-          <ArrowRight className="arrow-element arrow-3" style={{'--rotation': '30deg'}} />
-          <ArrowRight className="arrow-element arrow-4" style={{'--rotation': '-30deg'}} />
-          <ArrowRight className="arrow-element arrow-5" style={{'--rotation': '-90deg'}} />
-          <ArrowRight className="arrow-element arrow-6" style={{'--rotation': '90deg'}} />
+          <ArrowRight className="arrow-element arrow-1" style={{ '--rotation': '-30deg' }} />
+          <ArrowRight className="arrow-element arrow-2" style={{ '--rotation': '30deg' }} />
+          <ArrowRight className="arrow-element arrow-3" style={{ '--rotation': '30deg' }} />
+          <ArrowRight className="arrow-element arrow-4" style={{ '--rotation': '-30deg' }} />
+          <ArrowRight className="arrow-element arrow-5" style={{ '--rotation': '-90deg' }} />
+          <ArrowRight className="arrow-element arrow-6" style={{ '--rotation': '90deg' }} />
         </div>
       </div>
     </section>

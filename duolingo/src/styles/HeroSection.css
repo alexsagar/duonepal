@@ -11,20 +11,32 @@
 
 .bg-video {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 120%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1;
-  padding-top: 70px;
+  z-index: 0;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom,
+      rgba(2, 6, 23, 0.35) 0%,
+      rgba(2, 6, 23, 0.55) 100%);
 }
 
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -36,6 +48,7 @@
   text-align: center;
   padding: 0 2rem;
   z-index: 2;
+  position: relative;
 }
 
 /* Trust Badge - Updated class name */
@@ -74,9 +87,11 @@
   0% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
@@ -99,6 +114,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -154,6 +170,33 @@
   animation: fadeInUp 1s ease-out 0.6s both;
 }
 
+.hero-cta-wrap {
+  margin-top: 1.25rem;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.hero-book-now-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.hero-book-now-btn:hover {
+  background: #111827;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.45);
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-container {
@@ -166,15 +209,11 @@
   .hero-section {
     padding-top: 60px;
   }
-  
-  .bg-video {
-    padding-top: 60px;
-  }
-  
+
   .hero-payment-logos {
     gap: 2rem;
   }
-  
+
   .hero-logo-img {
     height: 180px;
   }
@@ -182,125 +221,161 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 50px;
-    min-height: 90vh;
+    padding-top: 80px;
+    min-height: auto;
+    padding-bottom: 3rem;
+    align-items: flex-start;
   }
-  
-  .bg-video {
-    padding-top: 50px;
-  }
-  
+
   .hero-container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
-  
+
   .hero-title {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     letter-spacing: -1.5px;
+    font-size: clamp(2rem, 7vw, 2.8rem);
   }
-  
+
   .hero-payment-logos {
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    gap: 1.25rem;
+    margin: 1.25rem 0;
   }
-  
+
   .hero-logo-img {
-    height: 140px;
+    height: 100px;
   }
-  
+
   .hero-trust-badge {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.25rem;
   }
-  
+
   .hero-subtitle {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    font-size: clamp(0.9rem, 2.8vw, 1.05rem);
+  }
+
+  .hero-cta-wrap {
+    margin-top: 1.25rem;
+  }
+
+  .hero-book-now-btn {
+    min-width: 155px;
+    padding: 0.75rem 1.25rem;
   }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    padding-top: 40px;
+    padding-top: 75px;
+    padding-bottom: 2.5rem;
   }
-  
-  .bg-video {
-    padding-top: 40px;
-  }
-  
+
   .hero-payment-logos {
     gap: 1rem;
-    justify-content: space-around;
+    justify-content: center;
+    margin: 1rem 0;
   }
-  
+
   .hero-logo-img {
-    height: 100px;
+    height: 80px;
   }
-  
+
   .hero-trust-badge {
     gap: 0.5rem;
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    margin-top: 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  .hero-cta-wrap {
+    margin-top: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: 30px;
-    min-height: 85vh;
+    padding-top: 70px;
+    min-height: auto;
+    padding-bottom: 2.5rem;
   }
-  
-  .bg-video {
-    padding-top: 30px;
-  }
-  
+
   .hero-container {
-    padding: 0 0.75rem;
+    padding: 0 1rem;
   }
-  
+
   .hero-title {
     letter-spacing: -1px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
   }
-  
+
   .hero-payment-logos {
     gap: 0.75rem;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
   }
-  
+
   .hero-logo-img {
-    height: 80px;
+    height: 70px;
   }
-  
+
   .hero-trust-badge {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     padding: 0.4rem 0.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
-  
+
   .hero-trust-indicator {
     width: 8px;
     height: 8px;
   }
-  
+
   .hero-subtitle {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .hero-cta-wrap {
     margin-top: 1rem;
+  }
+
+  .hero-book-now-btn {
+    min-width: 145px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.92rem;
   }
 }
 
 @media (max-width: 375px) {
+  .hero-section {
+    padding-top: 65px;
+    padding-bottom: 2rem;
+  }
+
   .hero-container {
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
   }
-  
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
   .hero-payment-logos {
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
-  
+
   .hero-logo-img {
-    height: 70px;
+    height: 60px;
   }
-  
+
   .hero-trust-badge {
     font-size: 0.75rem;
     padding: 0.35rem 0.7rem;
@@ -316,7 +391,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .hero-trust-badge {
     min-height: 44px;
   }
@@ -340,6 +415,7 @@
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -351,6 +427,7 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -362,6 +439,7 @@
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -370,6 +448,7 @@
 
 /* Reduce animations on mobile for better performance */
 @media (prefers-reduced-motion: reduce) {
+
   .hero-title,
   .hero-subtitle,
   .hero-payment-logos,
@@ -378,11 +457,11 @@
   .hero-payment-logo:nth-child(3) {
     animation: none;
   }
-  
+
   .hero-trust-indicator {
     animation: none;
   }
-  
+
   .hero-payment-logo:hover .hero-logo-img {
     transform: none;
   }

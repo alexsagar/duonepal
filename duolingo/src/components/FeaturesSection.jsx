@@ -45,9 +45,9 @@ const features = [
   }
 ];
 
-const FeaturesSection = ({ openModal }) => {
+const FeaturesSection = ({ openModal, id }) => {
   return (
-    <section className="features-section">
+    <section id={id} className="features-section">
       <div className="features-container">
         <div className="features-header">
           <h2 className="features-section-title">Everything You Need to Succeed</h2>
@@ -55,7 +55,7 @@ const FeaturesSection = ({ openModal }) => {
             Comprehensive resources and tools to help you ace your Duolingo English Test
           </p>
         </div>
-        
+
         <div className="features-grid">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
